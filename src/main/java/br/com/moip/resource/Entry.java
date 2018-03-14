@@ -14,7 +14,7 @@ public class Entry {
     private int grossAmount;
     private int moipAccountId;
     private String updatedAt;
-    private int id;
+    private String id;
     private Installment installment;
     private List<References> references;
     private String eventId;
@@ -46,7 +46,7 @@ public class Entry {
 
     public String getUpdatedAt() { return updatedAt; }
 
-    public int getId() { return id; }
+    public String getId() { return id; }
 
     public Installment getInstallment() { return installment; }
 

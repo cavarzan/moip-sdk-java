@@ -44,69 +44,69 @@ artifacts {
     archives javadocJar, sourcesJar
 }
 
-signing {
-    sign configurations.archives
-}
+//signing {
+//    sign configurations.archives
+//}
 
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
-
-            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
-                authentication(userName: ossrhUsername, password: ossrhPassword)
-            }
-
-            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
-                authentication(userName: ossrhUsername, password: ossrhPassword)
-            }
-
-            pom.project {
-                name 'Moip v2 SDK'
-                packaging 'jar'
-                // optionally artifactId can be defined here
-                description 'Java SDK for Moip v2 APIs'
-                url 'https://github.com/moip/java-sdk'
-
-                scm {
-                    connection 'scm:git:ssh://git@github.com:moip/java-sdk.git'
-                    developerConnection 'scm:git:ssh://git@github.com:moip/java-sdk.git'
-                    url 'https://github.com/moip/java-sdk'
-                }
-
-                licenses {
-                    license {
-                        name 'The MIT License (MIT)'
-                        url 'http://opensource.org/licenses/MIT'
-                    }
-                }
-
-                developers {
-                    developer {
-                        id 'rodrigo.saito'
-                        name 'Rodrigo Saito'
-                        email 'rodrigo.saito@moip.com.br'
-                    }
-                    developer {
-                        id 'caio.gaspar'
-                        name 'Caio Gaspar'
-                        email 'caio.gaspar@moip.com.br'
-                    }
-                    developer {
-                        id 'jair.bressani'
-                        name 'Jair Bressani Junior'
-                        email 'jair.bressani@moip.com.br'
-                    }
-                    developer {
-                        id 'matheus.nakaya'
-                        name 'Matheus Nakaya'
-                        email 'matheus.nakaya@moip.com.br'
-                    }
-                }
-            }
-        }
-    }
-}
+//uploadArchives {
+//    repositories {
+//        mavenDeployer {
+//            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+//
+////            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+////                authentication(userName: ossrhUsername, password: ossrhPassword)
+////            }
+////
+////            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+////                authentication(userName: ossrhUsername, password: ossrhPassword)
+////            }
+//
+//            pom.project {
+//                name 'Moip v2 SDK'
+//                packaging 'jar'
+//                // optionally artifactId can be defined here
+//                description 'Java SDK for Moip v2 APIs'
+//                url 'https://github.com/moip/java-sdk'
+//
+//                scm {
+//                    connection 'scm:git:ssh://git@github.com:moip/java-sdk.git'
+//                    developerConnection 'scm:git:ssh://git@github.com:moip/java-sdk.git'
+//                    url 'https://github.com/moip/java-sdk'
+//                }
+//
+//                licenses {
+//                    license {
+//                        name 'The MIT License (MIT)'
+//                        url 'http://opensource.org/licenses/MIT'
+//                    }
+//                }
+//
+//                developers {
+//                    developer {
+//                        id 'rodrigo.saito'
+//                        name 'Rodrigo Saito'
+//                        email 'rodrigo.saito@moip.com.br'
+//                    }
+//                    developer {
+//                        id 'caio.gaspar'
+//                        name 'Caio Gaspar'
+//                        email 'caio.gaspar@moip.com.br'
+//                    }
+//                    developer {
+//                        id 'jair.bressani'
+//                        name 'Jair Bressani Junior'
+//                        email 'jair.bressani@moip.com.br'
+//                    }
+//                    developer {
+//                        id 'matheus.nakaya'
+//                        name 'Matheus Nakaya'
+//                        email 'matheus.nakaya@moip.com.br'
+//                    }
+//                }
+//            }
+//        }
+//    }
+//}
 
 processResources {
     filesMatching("**/moipJavaSDK.properties") {
